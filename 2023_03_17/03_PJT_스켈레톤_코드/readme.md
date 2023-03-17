@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_PJT</title>
+</head>
+<body>
+    <h1>학습한 내용 + 새로 배운것들</h1>
+    <ul>
+        <h2>01_nav_footer.html</h2>
+        <h3><li>navbar</h3>
+            <ul>
+                <li>navbar 상단고정 fixed-top</li>
+                <li>화면축소시 햄버거메뉴바 생성<br></li>
+                    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button> -->
+                
+                <li>navbar테마변경 navbar-dark, bg-</li>
+                <li>footer 바닥 고정 <!-- <div class="botootm bottom-0 text-center"> --></li>
+                <li>참고 <a href="https://getbootstrap.kr/docs/5.0/components/navbar/">navbar</a></li>
+            </ul>
+        </li>
+        <h3><li>login</h3>
+            <ul>
+                <li>사용자의 이목을 끌기 위해 사용하는 화면전환 기법</li>
+                <li>bootstrap의 modal사용</li>
+                <li>참고 https://getbootstrap.com/docs/5.3/components/modal/#how-it-works</li>
+                <li>모달 창 생성후 login form 작성</li>
+                <li>모달 창은 div밖에 작성</li>
+                <li>input 테두리 둥글게 border-radius</li>
+            </ul>
+        </li>
+        <h2>02_home.html</h2>
+        <h3><li>Bootstrap Carousel Component 자동재생</h3>
+            <ul>
+                <li>참고 <a href="https://getbootstrap.com/docs/5.3/components/carousel/#how-it-works">자동재생</a></li>
+            </ul>
+        <h3><li>card형식 영화소개</h3>
+            <ul>
+                <li>참고 <a href="https://getbootstrap.com/docs/5.3/components/card/#about">card 형식</a></li>
+                <li>navbar와 header부분 띄우려면 header에 padding-top 주기</li>
+                
+                    <!-- <div class="row row-cols-1 row-cols-md-3 g-4"> -->
+                    
+                <li>참고 <a href="https://getbootstrap.com/docs/5.3/layout/gutters/#row-columns-gutters">행열 설정</a></li>
+            </ul>
+        </li>
+        <h2>03_community.html</h2>
+        <h3><li>Aside 게시판</h3>
+            <ul>
+                <li>Bootstrap List Group Component</li>
+                <li>버튼 클릭시 링크 이동 <!-- onclick = "location.href = '#'  --></li>
+                <li>grid를 활용한 구역나누기</li>
+            </ul>
+        </li>
+        <h3><li>Section 게시판</h3>
+            <ul>
+                <li>grid를 활용한 구역나누기</li>
+                <li>참고 <a href="https://getbootstrap.kr/docs/5.0/utilities/display/">grid</a></li>
+                
+                    <!-- <div class="d-lg-block d-none"> -->
+                
+                <li>
+                    <!-- <div class="d-lg-none d-block"> --> 
+                    Hidden only on lg	
+                </li>
+            </ul>
+        </li>
+        <h3><li>page</h3>
+            <ul>
+                <li>
+                    <!-- <ul class="pagination justify-content-center"> -->
+                        pagination을 활용한 페이징
+                </li>
+                <li>참고 
+                    <a href="https://getbootstrap.kr/docs/5.0/components/pagination/">페이징</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h1>어려웠던 부분</h1>
+    <p>col과 row를 사용하는 부분이 헷갈렸다. <br>
+       구역을 나누고 하나의 행에 몇개의 열을 나열할지는 쉽게 할 수 있었지만, 일정크기 이상일때 출력하고 일정크기 미만일때는 다른것을 출력하는 부분이 가장 헷갈렸다.<br>
+       구글링을 통해 해결을 했으나 잊지 않기위해 반복적으로 해당 웹페이지를 만들어봐야겠다.
+    </p>
+</body>
+</html>
