@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>SignOut</h1>
+  정말로 탈퇴하시겠습니까?
+  <form action="{% url 'accounts:delete' %}" method=="POST">
+    {% csrf_token %}  
+    <input type="submit" value="회원탈퇴">
+   </form>
+<a href="{% url 'movies:index' %}">BACK</a>
+{% endblock content %}
+
