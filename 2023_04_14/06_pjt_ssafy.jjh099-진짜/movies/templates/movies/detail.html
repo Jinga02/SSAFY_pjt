@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>DETAIL</h1>
+<hr>
+<b>{{movie.title}}</b>
+<p>Audience : {{movie.audience}}</p>
+<p>Release Dates : {{movie.release_date}}</p>
+<p>Genre : {{movie.genre}}</p>
+<p>Score : {{movie.score}}</p>
+<p>Poster URL : {{movie.poster_url}}</p>
+{% if movie.actor_image %}
+    <p>Actor : <img src="{{movie.actor_image.url}}"> </p>
+{% else %}
+    <p>Actor : 이미지가 없습니다.</p>
+{% endif %}
+<p>{{movie.description}}</p>
+<br>
+<h4>Comment</h4>
+{% comment %} 로그인여부에 따른 댓글 {% endcomment %}
+{% if  user.is_authenticated %}
+<form action="{% url 'movies:comments_create' movie.pk %}" method="POST">
+  {% csrf_token %}
+  {{comment_form}}
+  <input type="submit" value="작성">
+</form>
+{% else %}
+  {% comment %} <a href="#exampleModal" data-bs-toggle="modal" data-target="#login">Login</a> {% endcomment %}
+  <p>댓글을 달려면 로그인 해주세요.</p>
+{% endif %}
+
+<h4>댓글 목록</h4>
+{% if comments %}
+  <p><b>{{comments|length}}개의 댓글이 있습니다.</b></p>
+{% endif %}
+<ol>
+  {% for comment in comments %}
+  <li>
+    {{comment.content}} - {{comment.user}}
+    {% comment %} 로그인 유저와 댓글의 유저가 같을때 {% endcomment %}
+    {% if request.user == comment.user %}
+    <form action="{% url 'movies:comments_delete' movie.pk comment.pk%}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="DELETE">
+    </form>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
+
+{% comment %} 로그인유저와 작성자유저가 같을때 {% endcomment %}
+</ol>
+{% if request.user == movie.user %}
+<a href="{% url 'movies:update' movie.pk %}">UPDATE</a>
+<form action="{% url 'movies:delete' movie.pk %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="DELETE">
+</form>
+{% endif %}
+<a href="{% url 'movies:index' %}">BACK</a>
+
+{% endblock content %}

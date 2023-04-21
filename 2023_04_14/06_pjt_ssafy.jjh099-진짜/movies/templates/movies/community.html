@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- 03_community.html -->
+  <main class="mx-5 px-5 row pb-3" style="margin-top: 100px;">
+    <h1>Community</h1>
+    <!-- Aside - 게시판 목록 -->
+    <aside class="col-lg-2 col-12">
+      <ul class="list-group">
+          <a href="#" class="list-group-item text-primary">Boxoffice</a>
+          <a href="#" class="list-group-item text-primary">Movies</a>
+          <a href="#" class="list-group-item text-primary">Genres</a>
+          <a href="#" class="list-group-item text-primary">Actors</a>
+      </ul>
+    </aside>
+
+    <!-- Section - 게시판 -->
+    <section class="col">
+      <!-- article -->
+      <div class="d-lg-none d-block">
+        <hr>
+        <article class="col-auto">
+          <h1>Best Movie Ever</h1>
+          <h2>Great Movie Title</h2>
+          <p>user</p>
+          <h5>1 minute ago</h5>
+        </article>
+        <hr>
+        <article class="col-auto">
+          <h1>Movie Test</h1>
+          <h2>Great Movie Title</h2>
+          <p>user</p>
+          <h5>1 minute ago</h5>
+        </article>
+        <hr>
+        <article class="col-auto">
+          <h1>Movie Test</h1>
+          <h2>Great Movie Title</h2>
+          <p>user</p>
+          <h5>1 minute ago</h5>
+        </article>
+      </div>
+      <!-- tables -->
+      <div class="d-lg-block d-none">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">영화 제목</th>
+              <th scope="col">글 제목</th>
+              <th scope="col">작성자</th>
+              <th scope="col">작성 시간</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Great Movie title</th>
+              <td>Best Movie Ever</td>
+              <td>user</td>
+              <td>1 minute ago</td>
+            </tr>
+            <tr>
+              <th scope="row">Great Movie title</th>
+              <td>Movie Test</td>
+              <td>user</td>
+              <td>1 minute ago</td>
+            </tr>
+            <tr>
+              <th scope="row">Great Movie title</th>
+              <td >Movie Test</td>
+              <td>user</td>
+              <td>1 minute ago</td>
+            </tr>
+            <tr>
+              <th scope="row">Great Movie title</th>
+              <td >Movie Test</td>
+              <td>user</td>
+              <td>1 minute ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </main>
+
+{% endblock content %}

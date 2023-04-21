@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>INDEX</h1>
+{% if  user.is_authenticated %}
+<a href="{% url 'movies:create' %}">CREATE</a>
+{% endif %}
+
+{% for movies in movie %}
+    <hr>
+    <p><a href="{% url 'accounts:profile' movies.user.username%}">{{movies.user}}</a></p>
+    <p>
+      <a href="{% url 'movies:detail' movies.pk %}" id="article-title">{{movies.title}}</a>
+    </p>
+    <p>{{movies.score}}</p>
+    <p>{{movies.description}}</p>
+    <span>좋아요 : {{movies.like_user.count}}</span>
+      
+      {% if  user.is_authenticated%}
+    <form action="{% url 'movies:likes' movies.pk %}" method="POST">
+      {% csrf_token %}
+      {% if request.user in movies.like_user.all %}
+      <button>
+        <i class="fa-solid fa-heart-crack"></i>
+      </button>
+      {% else %}
+      <button>
+        <i class="fa-solid fa-thumbs-up"></i>
+      </button>
+        {% endif %}
+    </form>
+    {% endif %}
+    <span>싫어요 : {{movies.dislike_user.count}}</span>
+    {% if  user.is_authenticated%}
+    <form action="{% url 'movies:dislikes' movies.pk %}" method="POST">
+      {% csrf_token %}
+      {% if request.user in movies.dislike_user.all %}
+      <button>
+        <i class="fa-solid fa-heart"></i>
+      </button>
+      {% else %}
+      <button>
+        <i class="fa-solid fa-thumbs-down"></i>
+      </button>
+      {% endif %}
+    </form>
+    {% endif %}
+    </hr>
+  {% endfor %} 
+
+{% endblock content %}
