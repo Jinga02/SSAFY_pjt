@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Detail</h1>
+  <hr>
+  <h3>{{movies.title}}</h3>
+  <img src="{{movies.poster_path}}" alt="">
+  <p>개봉일 : {{movies.release_date}}</p>
+  <p>인기도 : {{movies.popularity}}</p>
+  <p>평점 투표수 : {{movies.vote_count}}</p>
+  <p>평점 : {{movies.vote_average}}</p>
+  <p>줄거리 : {{movies.overview}}</p>
+  <hr>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Movies</h1>
+  <hr>
+    <section>
+      <div class="row row-cols-1 row-cols-md-4 ">
+      {% for movie in movies %}
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <img src="{{movie.poster_path}}" class="card-img-top" alt="">
+            <h5 class="card-title"><a href="{% url 'movies:detail' movie.id %}">{{ movie.title }}</a></h5>
+            {% if movie.overview %}
+              <p class="card-text">줄거리 : {{ movie.overview|truncatechars:150 }}</p>
+            {% else %}
+              <p class="card-text">줄거리가 없습니다.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </section>
+{% endblock %}
